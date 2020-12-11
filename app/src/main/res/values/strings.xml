@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Photographer</string>
+    <string name="title_home">Головна</string>
+    <string name="title_portfolio">Портфоліо</string>
+</resources>
