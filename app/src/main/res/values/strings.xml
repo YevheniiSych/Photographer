@@ -7,4 +7,7 @@
     <string name="order_photo_session">Замовити зйомку</string>
     <string name="home_description">"Привіт, я – Марина Горяна. Професійний фотограф в Сумах. Фотографую звичайних людей так, наче вони – моделі. Знаю, куди вам подіти руки, як поставити ногу і вмію зловити вдалий кадр. "</string>
     <string name="phone_number">+38 (066) 66 23 802</string>
+    <string name="photo_session">Фотосессия</string>
+    <string name="love_story">Love Story</string>
+    <string name="more_detail">Подробнее</string>
 </resources>

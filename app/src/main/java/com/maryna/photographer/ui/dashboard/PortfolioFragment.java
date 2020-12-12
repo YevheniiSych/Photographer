@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.maryna.photographer.R;
 
@@ -16,14 +17,15 @@ public class PortfolioFragment extends Fragment {
 
     private PortfolioViewModel portfolioViewModel;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-
-        portfolioViewModel = new ViewModelProvider(this).get(PortfolioViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_portfolio, container, false);
-        final TextView textView = root.findViewById(R.id.text_dashboard);
-        portfolioViewModel.getText().observe(getViewLifecycleOwner(), s -> textView.setText(s));
-
+        init(root);
         return root;
+    }
+
+    private void init(View root){
+        portfolioViewModel = new ViewModelProvider(this).get(PortfolioViewModel.class);
+        portfolioViewModel.getText().observe(getViewLifecycleOwner(), s -> {});
+
     }
 }
