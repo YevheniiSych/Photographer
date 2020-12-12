@@ -16,7 +16,6 @@
         android:id="@+id/navigation_portfolio"
         android:name="com.maryna.photographer.ui.dashboard.PortfolioFragment"
         android:label="@string/title_portfolio"
-        tools:layout="@layout/fragment_portfolio" >
-    </fragment>
+        tools:layout="@layout/fragment_portfolio" />
 
 </navigation>
