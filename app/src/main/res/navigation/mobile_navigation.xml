@@ -7,15 +7,20 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.maryna.photographer.ui.home.HomeFragment"
+        android:name="com.maryna.photographer.ui.fragments.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
     </fragment>
 
     <fragment
         android:id="@+id/navigation_portfolio"
-        android:name="com.maryna.photographer.ui.portfolio.PortfolioFragment"
+        android:name="com.maryna.photographer.ui.fragments.PortfolioFragment"
         android:label="@string/title_portfolio"
         tools:layout="@layout/fragment_portfolio" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.maryna.photographer.ui.fragments.DetailFragment"
+        android:label="detail_fragment"
+        tools:layout="@layout/detail_fragment" />
 
 </navigation>

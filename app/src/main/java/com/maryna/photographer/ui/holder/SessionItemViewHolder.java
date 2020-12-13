@@ -35,8 +35,8 @@ public class SessionItemViewHolder extends RecyclerView.ViewHolder {
 
         Picasso.get()
                 .load(photoSession.getPhotoURL())
-                .placeholder(R.drawable.photo)
-                .error(R.drawable.photo)
+                .placeholder(R.drawable.ic_loading)
+                .error(R.drawable.ic_loading)
                 .into(photo);
     }
 }
