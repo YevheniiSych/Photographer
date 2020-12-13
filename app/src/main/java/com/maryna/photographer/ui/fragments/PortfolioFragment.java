@@ -1,5 +1,6 @@
 package com.maryna.photographer.ui.fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +9,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,6 +29,7 @@ public class PortfolioFragment extends Fragment {
         return root;
     }
 
+    @SuppressLint("CheckResult")
     private void init(View root) {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         sessionTypesList = root.findViewById(R.id.sessionTypesList);
@@ -38,7 +39,7 @@ public class PortfolioFragment extends Fragment {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                        photoSessions -> sessionTypesList.setAdapter(new SessionItemAdapter(photoSessions)),
+                        photoSessions -> sessionTypesList.setAdapter(new SessionItemAdapter(photoSessions, getActivity())),
                         error -> Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_LONG).show()
                 );
     }

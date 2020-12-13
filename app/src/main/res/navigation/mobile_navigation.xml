@@ -17,10 +17,14 @@
         android:name="com.maryna.photographer.ui.fragments.PortfolioFragment"
         android:label="@string/title_portfolio"
         tools:layout="@layout/fragment_portfolio" />
+
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.maryna.photographer.ui.fragments.DetailFragment"
-        android:label="detail_fragment"
-        tools:layout="@layout/detail_fragment" />
+        tools:layout="@layout/detail_fragment" >
+        <action
+            android:id="@+id/action_detailFragment_to_navigation_portfolio"
+            app:destination="@id/navigation_portfolio" />
+    </fragment>
 
 </navigation>

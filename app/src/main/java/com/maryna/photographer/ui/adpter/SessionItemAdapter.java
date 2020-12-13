@@ -1,11 +1,11 @@
 package com.maryna.photographer.ui.adpter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.maryna.photographer.R;
@@ -17,9 +17,11 @@ import java.util.List;
 public class SessionItemAdapter extends RecyclerView.Adapter<SessionItemViewHolder> {
 
     private List<PhotoSession> photoSessions;
+    private FragmentActivity activity;
 
-    public SessionItemAdapter(List<PhotoSession> photoSessions) {
+    public SessionItemAdapter(List<PhotoSession> photoSessions, FragmentActivity activity) {
         this.photoSessions = photoSessions;
+        this.activity = activity;
     }
 
     @NonNull
@@ -27,7 +29,7 @@ public class SessionItemAdapter extends RecyclerView.Adapter<SessionItemViewHold
     public SessionItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.session_type_item, parent, false);
-        return new SessionItemViewHolder(view);
+        return new SessionItemViewHolder(view, activity);
     }
 
     @Override

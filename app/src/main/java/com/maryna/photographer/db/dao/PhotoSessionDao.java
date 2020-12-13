@@ -20,6 +20,6 @@ public interface PhotoSessionDao {
     @Query("SELECT * FROM PhotoSession")
     Single<List<PhotoSession>> getAllPhotoSessions();
 
-    @Query("SELECT * FROM PhotoSession where title")
-    Single<PhotoSession> getPhotoSessionByTitle();
+    @Query("SELECT * FROM PhotoSession where sessionId = :id")
+    Single<PhotoSession> getPhotoSessionById(int id);
 }

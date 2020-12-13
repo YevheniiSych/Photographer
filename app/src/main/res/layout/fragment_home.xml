@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.05"
-        android:background="@drawable/main_photo"/>
+        android:background="@drawable/main_photo" />
 
     <TextView
         android:id="@+id/textView"
@@ -58,7 +58,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0.1"
+        android:elevation="10dp"/>
 
     <TextView
         android:id="@+id/textView4"

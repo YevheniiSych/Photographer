@@ -1,5 +1,6 @@
 package com.maryna.photographer;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +23,8 @@ import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
 
+    private NavController navController;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,32 +35,37 @@ public class MainActivity extends AppCompatActivity {
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_portfolio)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
         initializeDB();
     }
 
+    public NavController getNavController() {
+        return navController;
+    }
+
+    @SuppressLint("CheckResult")
     private void initializeDB() {
         List<PhotoSession> photoSessions = new ArrayList<>();
         photoSessions.add(new PhotoSession(
                         getString(R.string.love_story),
-                        "https://user-images.githubusercontent.com/66691210/102014745-4a70e700-3d60-11eb-99c0-00f721a6935c.jpg",
+                        "https://user-images.githubusercontent.com/66691210/102014746-4ba21400-3d60-11eb-8db2-bf7db30def95.jpg",
                         "Історія любові кожної пари неповторна! Я допоможу зберегти її у пам'яті назавжди.",
                         0
                 )
         );
         photoSessions.add(new PhotoSession(
                         "Сімейна",
-                        "https://user-images.githubusercontent.com/66691210/102014867-f0245600-3d60-11eb-8ff5-5a620fb3333d.jpg",
+                        "https://user-images.githubusercontent.com/66691210/102014872-f1ee1980-3d60-11eb-9b3a-17dd9ec4ddbf.jpg",
                         "Сімейна фотосесія – це весела зйомка, яка ще більше зблизить вашу сім'ю, а фото стануть чудовою прикрасою дому.",
                         1
                 )
         );
         photoSessions.add(new PhotoSession(
                         "Дитяча",
-                        "https://user-images.githubusercontent.com/66691210/102014959-55784700-3d61-11eb-9cd0-4d78cfbf4b7d.jpg",
+                        "https://user-images.githubusercontent.com/66691210/102014971-57daa100-3d61-11eb-9926-a6911c0d1816.jpg",
                         "Сімейна фотосесія – це весела зйомка, яка ще більше зблизить вашу сім'ю, а фото стануть чудовою прикрасою дому.",
                         2
                 )
