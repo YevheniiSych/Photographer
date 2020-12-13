@@ -9,6 +9,8 @@ import com.maryna.photographer.model.Photo;
 
 import java.util.List;
 
+import io.reactivex.Single;
+
 @Dao
 public interface PhotoDao {
 
@@ -16,8 +18,5 @@ public interface PhotoDao {
     void insertAllPhotos(List<Photo> photos);
 
     @Query("SELECT * FROM Photo where sessionType = :sessionType")
-    List<Photo> getPhotosBySession(int sessionType);
-
-    @Query("SELECT * FROM Photo where sessionType = :sessionType AND isHeader = 'true'")
-    Photo getHeaderPhotoBySession(int sessionType);
+    Single<List<Photo>> getPhotosBySession(int sessionType);
 }

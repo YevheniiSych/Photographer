@@ -15,7 +15,7 @@ import com.maryna.photographer.model.PhotoSession;
                 PhotoPackage.class,
                 Photo.class
         },
-        version = 1
+        version = 2
 )
 abstract public class PhotoDatabase extends RoomDatabase {
         abstract public PhotoPackageDao photoPackageDao();

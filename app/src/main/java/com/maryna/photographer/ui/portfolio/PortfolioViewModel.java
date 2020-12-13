@@ -1,4 +1,4 @@
-package com.maryna.photographer.ui.dashboard;
+package com.maryna.photographer.ui.portfolio;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

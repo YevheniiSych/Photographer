@@ -10,15 +10,7 @@ public class Photo {
     private int photoId;
     private String photoUrl;
     private int sessionType; // 0 - love story, 1 - family, 2 - сhild, 3 - Individual
-    private boolean isHeader;// default false
 
-    public Photo(String photoUrl, int sessionType, boolean isHeader) {
-        this.photoUrl = photoUrl;
-        this.sessionType = sessionType;
-        this.isHeader = isHeader;
-    }
-
-    @Ignore
     public Photo(String photoUrl, int sessionType) {
         this.photoUrl = photoUrl;
         this.sessionType = sessionType;
@@ -46,13 +38,5 @@ public class Photo {
 
     public void setSessionType(int sessionType) {
         this.sessionType = sessionType;
-    }
-
-    public boolean isHeader() {
-        return isHeader;
-    }
-
-    public void setHeader(boolean header) {
-        isHeader = header;
     }
 }

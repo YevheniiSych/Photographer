@@ -11,6 +11,8 @@ import com.maryna.photographer.model.PhotoPackage;
 
 import java.util.List;
 
+import io.reactivex.Single;
+
 @Dao
 public interface PhotoPackageDao {
 
@@ -18,5 +20,5 @@ public interface PhotoPackageDao {
     void insertAllPhotoPackages(List<PhotoPackage> photoPackages);
 
     @Query("SELECT * FROM PhotoPackage where name = :name")
-    PhotoPackage getPhotoPackageByName(String name);
+    Single<PhotoPackage> getPhotoPackageByName(String name);
 }

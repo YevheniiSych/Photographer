@@ -43,24 +43,28 @@ public class MainActivity extends AppCompatActivity {
         List<PhotoSession> photoSessions = new ArrayList<>();
         photoSessions.add(new PhotoSession(
                         getString(R.string.love_story),
+                        "https://user-images.githubusercontent.com/66691210/102014745-4a70e700-3d60-11eb-99c0-00f721a6935c.jpg",
                         "Історія любові кожної пари неповторна! Я допоможу зберегти її у пам'яті назавжди.",
                         0
                 )
         );
         photoSessions.add(new PhotoSession(
                         "Сімейна",
+                        "https://user-images.githubusercontent.com/66691210/102014867-f0245600-3d60-11eb-8ff5-5a620fb3333d.jpg",
                         "Сімейна фотосесія – це весела зйомка, яка ще більше зблизить вашу сім'ю, а фото стануть чудовою прикрасою дому.",
                         1
                 )
         );
         photoSessions.add(new PhotoSession(
                         "Дитяча",
+                        "https://user-images.githubusercontent.com/66691210/102014959-55784700-3d61-11eb-9cd0-4d78cfbf4b7d.jpg",
                         "Сімейна фотосесія – це весела зйомка, яка ще більше зблизить вашу сім'ю, а фото стануть чудовою прикрасою дому.",
                         2
                 )
         );
         photoSessions.add(new PhotoSession(
                         "Індивідуальна",
+                        "https://user-images.githubusercontent.com/66691210/102015006-8a849980-3d61-11eb-8b40-a158ef254490.jpg",
                         "Індивідуальна фотосесії - це ваше особисте свято і привід глянути на себе з зовсім іншого боку, відкрити те, чого не помічали раніше.",
                         3
                 )
@@ -98,8 +102,7 @@ public class MainActivity extends AppCompatActivity {
         List<Photo> photos = new ArrayList<>();
         photos.add(new Photo(
                         "https://user-images.githubusercontent.com/66691210/102014745-4a70e700-3d60-11eb-99c0-00f721a6935c.jpg",
-                        0,
-                        true
+                        0
                 )
         );
 
@@ -147,8 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
         photos.add(new Photo(
                         "https://user-images.githubusercontent.com/66691210/102014867-f0245600-3d60-11eb-8ff5-5a620fb3333d.jpg",
-                        1,
-                        true
+                        1
                 )
         );
 
@@ -196,8 +198,7 @@ public class MainActivity extends AppCompatActivity {
 
         photos.add(new Photo(
                         "https://user-images.githubusercontent.com/66691210/102014959-55784700-3d61-11eb-9cd0-4d78cfbf4b7d.jpg",
-                        2,
-                        true
+                        2
                 )
         );
 
@@ -245,8 +246,7 @@ public class MainActivity extends AppCompatActivity {
 
         photos.add(new Photo(
                         "https://user-images.githubusercontent.com/66691210/102015006-8a849980-3d61-11eb-8b40-a158ef254490.jpg",
-                        3,
-                        true
+                        3
                 )
         );
 

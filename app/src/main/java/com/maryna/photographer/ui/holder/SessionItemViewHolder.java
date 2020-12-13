@@ -1,5 +1,7 @@
 package com.maryna.photographer.ui.holder;
 
+import android.content.Context;
+import android.net.Uri;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -8,6 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.maryna.photographer.R;
+import com.maryna.photographer.model.PhotoSession;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
 
 
 public class SessionItemViewHolder extends RecyclerView.ViewHolder {
@@ -25,7 +30,13 @@ public class SessionItemViewHolder extends RecyclerView.ViewHolder {
         photo = itemView.findViewById(R.id.sessionTypePhoto);
     }
 
-    public void bindSessionItem(){
+    public void bindSessionItem(PhotoSession photoSession) {
+        title.setText(photoSession.getTitle());
 
+        Picasso.get()
+                .load(photoSession.getPhotoURL())
+                .placeholder(R.drawable.photo)
+                .error(R.drawable.photo)
+                .into(photo);
     }
 }

@@ -9,6 +9,8 @@ import com.maryna.photographer.model.PhotoSession;
 
 import java.util.List;
 
+import io.reactivex.Single;
+
 @Dao
 public interface PhotoSessionDao {
 
@@ -16,8 +18,8 @@ public interface PhotoSessionDao {
     void insertAllPhotoSessions(List<PhotoSession> photoSessions);
 
     @Query("SELECT * FROM PhotoSession")
-    List<PhotoSession> getAllPhotoSessions();
+    Single<List<PhotoSession>> getAllPhotoSessions();
 
     @Query("SELECT * FROM PhotoSession where title")
-    PhotoSession getPhotoSessionByTitle();
+    Single<PhotoSession> getPhotoSessionByTitle();
 }
