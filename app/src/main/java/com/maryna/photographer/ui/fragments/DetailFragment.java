@@ -4,6 +4,7 @@ package com.maryna.photographer.ui.fragments;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -13,7 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.maryna.photographer.App;
@@ -51,6 +51,10 @@ public class DetailFragment extends Fragment {
 
     @SuppressLint("CheckResult")
     private void init(View view) {
+//        ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+//        ((MainActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
+        setHasOptionsMenu(true);
+
         detailImage = view.findViewById(R.id.detailImage);
         detailTitle = view.findViewById(R.id.detailTitleText);
         detailDescription = view.findViewById(R.id.detailDescriptionText);
@@ -61,10 +65,16 @@ public class DetailFragment extends Fragment {
             App.getInstance().getDatabase().photoSessionDao().getPhotoSessionById(sessionId)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(photoSession -> {
-                        setUpViews(photoSession);
-                    });
+                    .subscribe(this::setUpViews);
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == android.R.id.home && getActivity() != null) {
+            getActivity().onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @SuppressLint("CheckResult")
