@@ -51,8 +51,6 @@ public class DetailFragment extends Fragment {
 
     @SuppressLint("CheckResult")
     private void init(View view) {
-//        ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-//        ((MainActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
         setHasOptionsMenu(true);
 
         detailImage = view.findViewById(R.id.detailImage);
@@ -94,8 +92,6 @@ public class DetailFragment extends Fragment {
         App.getInstance().getDatabase().photoDao().getPhotosBySession(photoSession.getType())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(photos -> {
-                    detailPhotos.setAdapter(new PhotoItemAdapter(photos));
-                });
+                .subscribe(photos -> detailPhotos.setAdapter(new PhotoItemAdapter(photos)));
     }
 }
