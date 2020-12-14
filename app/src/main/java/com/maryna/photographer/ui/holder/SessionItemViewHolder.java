@@ -43,6 +43,13 @@ public class SessionItemViewHolder extends RecyclerView.ViewHolder {
                 .error(R.drawable.ic_loading)
                 .into(photo);
 
+        orderBtn.setTag(photoSession.getSessionId());
+        orderBtn.setOnClickListener(view -> {
+            Bundle bundle = new Bundle();
+            bundle.putInt(PHOTO_SESSION_ID, ((int) view.getTag()));
+            ((MainActivity) activity).getNavController().navigate(R.id.selectPackageFragment);
+        });
+
         detailBtn.setTag(photoSession.getSessionId()); //сохраняем id фото сессии в теге кнопки
         detailBtn.setOnClickListener(view -> {
             Bundle bundle = new Bundle();

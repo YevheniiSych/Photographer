@@ -22,9 +22,10 @@
         android:id="@+id/detailFragment"
         android:name="com.maryna.photographer.ui.fragments.DetailFragment"
         tools:layout="@layout/detail_fragment" >
-        <action
-            android:id="@+id/action_detailFragment_to_navigation_portfolio"
-            app:destination="@id/navigation_portfolio" />
     </fragment>
+    <fragment
+        android:id="@+id/selectPackageFragment"
+        android:name="com.maryna.photographer.SelectPackageFragment"
+        tools:layout="@layout/fragment_select_package" />
 
 </navigation>
