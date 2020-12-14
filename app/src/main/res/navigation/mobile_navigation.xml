@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/selectPackageFragment"
-        android:name="com.maryna.photographer.SelectPackageFragment"
+        android:name="com.maryna.photographer.ui.fragments.SelectPackageFragment"
         tools:layout="@layout/fragment_select_package" />
 
 </navigation>

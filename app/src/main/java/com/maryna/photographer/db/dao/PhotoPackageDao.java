@@ -19,6 +19,6 @@ public interface PhotoPackageDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAllPhotoPackages(List<PhotoPackage> photoPackages);
 
-    @Query("SELECT * FROM PhotoPackage where name = :name")
-    Single<PhotoPackage> getPhotoPackageByName(String name);
+    @Query("SELECT * FROM PhotoPackage")
+    Single<List<PhotoPackage>> getAllPhotoPackages();
 }

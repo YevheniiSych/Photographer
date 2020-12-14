@@ -10,6 +10,8 @@
     <string name="photo_session">Фотосессия</string>
     <string name="love_story">Love Story</string>
     <string name="more_detail">Подробнее</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="uah">%d грн</string>
+    <string name="time">%d год</string>
+    <string name="photo_count">%d кольорових фото</string>
 </resources>
