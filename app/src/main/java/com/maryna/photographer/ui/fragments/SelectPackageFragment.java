@@ -2,12 +2,12 @@ package com.maryna.photographer.ui.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -30,6 +30,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 import static com.maryna.photographer.ui.fragments.DetailFragment.PHOTO_SESSION_ID;
+import static com.maryna.photographer.ui.fragments.OrderFragment.PHOTO_SESSION_NAME;
 
 public class SelectPackageFragment extends Fragment {
 
@@ -47,6 +48,7 @@ public class SelectPackageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        setHasOptionsMenu(true);
         return inflater.inflate(R.layout.fragment_select_package, container, false);
     }
 
@@ -54,6 +56,14 @@ public class SelectPackageFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         init(view);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == android.R.id.home && getActivity() != null) {
+            getActivity().onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void init(View view) {
@@ -91,6 +101,12 @@ public class SelectPackageFragment extends Fragment {
                 .error(R.drawable.ic_loading)
                 .fit()
                 .into(photoImg);
+
+        orderBtn.setOnClickListener(v -> {
+            Bundle bundle = new Bundle();
+            bundle.putString(PHOTO_SESSION_NAME, spinner.getSelectedItem().toString());
+            ((MainActivity) getActivity()).getNavController().navigate(R.id.orderFragment, bundle);
+        });
     }
 
     private void setPackagesInfo(List<PhotoPackage> photoPackages) {
@@ -105,16 +121,16 @@ public class SelectPackageFragment extends Fragment {
             }
 
             private void updatePackageInfo() {
-                if(findPackageByName() != null){
-                    priceTxt.setText(getString(R.string.uah,findPackageByName().getPrice()));
+                if (findPackageByName() != null) {
+                    priceTxt.setText(getString(R.string.uah, findPackageByName().getPrice()));
                     timeTxt.setText(getString(R.string.time, findPackageByName().getTimeMin()));
                     photoCountTxt.setText(getString(R.string.photo_count, findPackageByName().getPhotoCount()));
                 }
             }
 
-            private PhotoPackage findPackageByName(){
+            private PhotoPackage findPackageByName() {
                 for (PhotoPackage photoPackage : photoPackages) {
-                    if(photoPackage.getName().equals(spinner.getSelectedItem().toString())){
+                    if (photoPackage.getName().equals(spinner.getSelectedItem().toString())) {
                         return photoPackage;
                     }
                 }

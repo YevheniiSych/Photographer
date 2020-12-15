@@ -14,4 +14,13 @@
     <string name="uah">%d грн</string>
     <string name="time">%d год</string>
     <string name="photo_count">%d кольорових фото</string>
+
+    <string name="order_photo_session_type">Замовлення фотосессії "%s"</string>
+    <string name="order">Замовлення</string>
+    <string name="edditional_wishes">Додаткові побажання</string>
+    <string name="wish_date">Бажана дата зйомки *</string>
+    <string name="email">Електронна скринька *</string>
+    <string name="phone_number_txt">Номер телефону *</string>
+    <string name="your_name">Ваше Ім\'я *</string>
+    <string name="require_fields">Заповніть всі необхідні поля позначені зірочкою (*)</string>
 </resources>
