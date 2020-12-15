@@ -23,19 +23,25 @@
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/selectPackageImg" />
 
-    <Spinner
-        android:id="@+id/packageSpinner"
+    <FrameLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
+        android:background="@drawable/rounded_rectangle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/selectPackageTitle"
         app:layout_constraintVertical_bias="0.088"
-        app:layout_constraintWidth_percent="0.6"
-        android:textAlignment="center"
-        android:spinnerMode="dropdown"/>
+        app:layout_constraintWidth_percent="0.6">
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/packageSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="0dp"
@@ -72,9 +78,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginTop="30dp"
+            android:drawablePadding="10dp"
             android:textSize="@dimen/header_text_size"
-            app:drawableStartCompat="@drawable/ic_time_24"
-            android:drawablePadding="10dp"/>
+            app:drawableStartCompat="@drawable/ic_time_24" />
 
         <TextView
             android:id="@+id/selectPackagePhotoCount"
@@ -82,9 +88,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
+            android:drawablePadding="10dp"
             android:textSize="@dimen/header_text_size"
-            app:drawableStartCompat="@drawable/ic_gallery_24"
-            android:drawablePadding="10dp"/>
+            app:drawableStartCompat="@drawable/ic_gallery_24" />
 
         <TextView
             android:id="@+id/makeOrderBtn"
@@ -97,8 +103,7 @@
             android:elevation="10dp"
             android:paddingHorizontal="40dp"
             android:paddingVertical="10dp"
-            android:text="@string/order_photo_session"
-            android:textColor="@color/white" />
+            android:text="@string/order_photo_session" />
 
     </LinearLayout>
 

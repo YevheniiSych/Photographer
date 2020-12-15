@@ -9,10 +9,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.fragment.app.Fragment;
 
 import com.maryna.photographer.App;
@@ -39,7 +39,7 @@ public class SelectPackageFragment extends Fragment {
     private TextView timeTxt;
     private TextView photoCountTxt;
     private TextView orderBtn;
-    private Spinner spinner;
+    private AppCompatSpinner spinner;
 
     private List<PhotoPackage> photoPackages;
 
