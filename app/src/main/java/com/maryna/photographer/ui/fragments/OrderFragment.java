@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.maryna.photographer.MainActivity;
 import com.maryna.photographer.R;
 
 public class OrderFragment extends Fragment {
@@ -90,5 +91,6 @@ public class OrderFragment extends Fragment {
         emailIntent.putExtra(Intent.EXTRA_EMAIL, "evgeniysych18@gmail.com"); // email фотографа
         emailIntent.putExtra(Intent.EXTRA_TEXT, emailBody);
         startActivity(Intent.createChooser(emailIntent, "Send email"));
+        ((MainActivity)getActivity()).getNavController().navigate(R.id.action_orderFragment_to_homeFragment);
     }
 }
