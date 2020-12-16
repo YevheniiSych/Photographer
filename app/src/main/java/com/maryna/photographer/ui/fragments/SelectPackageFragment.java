@@ -80,12 +80,12 @@ public class SelectPackageFragment extends Fragment {
             App.getInstance().getDatabase().photoSessionDao().getPhotoSessionById(sessionId)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(this::setUpSessionViews);
+                    .subscribe(this::setUpSessionViews);//достаем вид фотосессии по ид
 
             App.getInstance().getDatabase().photoPackageDao().getAllPhotoPackages()
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(this::setPackagesInfo);
+                    .subscribe(this::setPackagesInfo);//достаем все тарифные пакеты
         }
     }
 

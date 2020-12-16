@@ -41,11 +41,11 @@ public class SessionItemViewHolder extends RecyclerView.ViewHolder {
                 .load(photoSession.getPhotoURL())
                 .placeholder(R.drawable.ic_loading)
                 .error(R.drawable.ic_loading)
-                .into(photo);
+                .into(photo);// загружаем картинку
 
-        orderBtn.setTag(photoSession.getSessionId());
+        orderBtn.setTag(photoSession.getSessionId());// сохраняем ид в теге кнопки что бы знать на какую кнопку нажали
         orderBtn.setOnClickListener(view -> {
-            Bundle bundle = new Bundle();
+            Bundle bundle = new Bundle();//аргументы
             bundle.putInt(PHOTO_SESSION_ID, ((int) view.getTag()));
             ((MainActivity) activity).getNavController().navigate(R.id.selectPackageFragment, bundle);
         });

@@ -85,12 +85,11 @@ public class OrderFragment extends Fragment {
 
     private void sendEmail() {
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.setData(Uri.parse("mailto:"));
-        emailIntent.setType("text/plain");
+        emailIntent.setType("message/rfc822");
         String emailBody = nameTxt.getText() + ", " + phoneTxt.getText() + ", " + emailTxt.getText() +  ", " + dateTxt.getText() + "\n" + wishesTxt.getText();
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, "evgeniysych18@gmail.com"); // email фотографа
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"viktorianika28key@gmail.com"}); // email фотографа
         emailIntent.putExtra(Intent.EXTRA_TEXT, emailBody);
-        startActivity(Intent.createChooser(emailIntent, "Send email"));
+        startActivity(Intent.createChooser(emailIntent, "Сhoose email app"));
         ((MainActivity)getActivity()).getNavController().navigate(R.id.action_orderFragment_to_homeFragment);
     }
 }

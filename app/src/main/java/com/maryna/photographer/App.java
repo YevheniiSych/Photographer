@@ -18,7 +18,7 @@ public class App extends Application {
         instance = this;
         database = Room.databaseBuilder(this, PhotoDatabase.class, "PhotoDatabase")
                 .fallbackToDestructiveMigration()
-                .build();
+                .build(); // создаем объект бд
     }
 
     public static App getInstance() {
